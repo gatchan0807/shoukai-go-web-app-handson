@@ -9,6 +9,7 @@ import (
 func main() {
 	err := http.ListenAndServe(
 		":18080",
+		// memo: ここで http.HandleFunc と http.HandlerFunc を見間違えていて一瞬詰まった
 		http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
 		}),
