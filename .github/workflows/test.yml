@@ -12,6 +12,6 @@ jobs:
         with:
           go-version: '>=1.18'
       - uses: actions/checkout@v3
-      - run: go test ./go_todo_app/... -coverprofile=coverage.out
+      - run: cd go_todo_app; go test ./... -coverprofile=../coverage.out
       - name: report coverage.out
         uses: k1LoW/octocov-action@v0
